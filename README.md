@@ -26,15 +26,33 @@ If you wish instead to run the apps in a detached process, you can run:
 $ npm start detached
 ```
 
-Once the containers are running, this will also attempt to open a browser window to the application.
+Using detached mode, once the containers are running, this will also attempt to open a browser window to the application.
 
-In addition, once the `docker-compose.yml` file is generated, you can use the `docker-compose` command with [its CLI](https://docs.docker.com/compose/reference/overview/)
+When in detached mode, to restart the apps, you can run:
+```bash
+$ npm start restart
+```
 
-### Interactive scripts
-To view all available scripts, run:
+Similarly, to stop the apps, you can run:
+```bash
+$ npm start docker.down
+```
+
+### Other information about the scripts
+Under the hood, `npm start` is simpy running the `nps` command.  If you wish, you can install this script globally using `npm i -g nps` and run the scripts by typing, for instance: `nps docker.down`.  Globally installing `nps` also allows you to get auto-completion in a `bash` environment (or `zsh` with [`bashcompinit` enabled](https://stackoverflow.com/a/27853970/2939688)) by adding the following to your `.bash_profile` or `.bashrc` (or `.zshrc`):
+```bash
+source <(nps completion)
+```
+
+In addition, once the `docker-compose.yml` file is generated, you can use the `docker-compose` command with [its CLI](https://docs.docker.com/compose/reference/overview/).
+
+To view all available scripts and execute one using an interactive shell, run:
 ```bash
 $ npm run interactive
 ```
+
+### Gotchas
+Whenever you `npm install [some-package]` from within one of the container directories, you will need to restart the app.  If you're running in attached mode (i.e. `npm start`), you can simply `ctrl+c` out of the process and re-run `npm start`.  If in detached mode, you can run `npm start restart`
 
 ## Containers
 * `server`
