@@ -5,15 +5,15 @@ const chalk = require('chalk')
 module.exports = {
   scripts: {
     default: {
-      script: 'nps docker.createFile docker.start',
-      description: 'Build and start all apps using `docker-compose` in a detached process.',
+      script: 'nps docker.createFile docker.up',
+      description: 'Build and start all apps using `docker-compose`.',
     },
     restart: {
       script: 'nps docker.down docker.start'
     },
-    attached: {
-      script: 'nps docker.createFile docker.up',
-      description: 'Build and start all apps using `docker-compose`.',
+    detached: {
+      script: 'nps docker.createFile docker.docker.start',
+      description: 'Build and start all apps using `docker-compose` in a detached process.',
     },
     docker: {
       createFile: {

@@ -21,12 +21,12 @@ To generate a `docker-compose.yml` file and spin up all of the containers using 
 $ npm start
 ```
 
-This will start all of the containers in a detached process.  Once the containers are running, it will also attempt to open a browser window to the application.
-
-If you wish instead to run the apps and see all of the logs, you can run:
+If you wish instead to run the apps in a detached process, you can run:
 ```bash
-$ npm start attached
+$ npm start detached
 ```
+
+Once the containers are running, this will also attempt to open a browser window to the application.
 
 In addition, once the `docker-compose.yml` file is generated, you can use the `docker-compose` command with [its CLI](https://docs.docker.com/compose/reference/overview/)
 
