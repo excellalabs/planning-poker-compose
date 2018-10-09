@@ -38,6 +38,10 @@ export const containers = {
         3000: 3000,
       },
       networks: ['proxy'],
+      environment: {
+        GRAPHQL_URL: 'http://localhost/graphql',
+        GRAPHQL_SUBSCRIPTION_URL: 'ws://localhost/graphql',
+      },
     },
     startMessage: 'To create a production build, use npm run build.',
   }),
