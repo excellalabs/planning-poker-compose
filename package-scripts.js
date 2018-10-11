@@ -12,7 +12,7 @@ module.exports = {
       script: 'nps docker.down docker.start'
     },
     detached: {
-      script: 'nps docker.createFile docker.docker.start',
+      script: 'nps docker.createFile docker.start',
       description: 'Build and start all apps using `docker-compose` in a detached process.',
     },
     docker: {
